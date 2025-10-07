@@ -1,1 +1,0 @@
-stow/bash/.bash_profile
