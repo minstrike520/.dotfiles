@@ -1,0 +1,38 @@
+# .local/
+
+- /.local/share/applications/**
+- /.local/share/Trash/**
+- /.local/share/nvim/**
+- /.local/share/klipper/**
+- /.local/share/baloo/**
+- /.local/share/osu/**
+- /.local/share/onlyoffice/**
+- /.local/share/krita/**
+- /.local/share/zed/**
+
++ /.local/share/**
++ /.local/state/**
+
+# .config/
+- /.config/google-chrome/**
+- /.config/discord/**
+- /.config/obsidian/**
+- /.config/Xmind/Electron v3/**
+- /.config/Code/**
+- /.config/nvim/** # managed by stow
+
++ /.config/**
+
+# Other Dot-folders
++ /.gnupg/**
+
+
+# Remaining Directories
+
+- yay/**
+- /repos/**
+- /tmp/**
++ /{{[^\.].*}}
+
+# Exclusion
+- *
