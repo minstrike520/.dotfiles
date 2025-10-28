@@ -1,5 +1,6 @@
 [core]
 	quotepath = false
+	editor = vim
 [user]
 	email = minstrike520@gmail.com
 	name = minstrike520

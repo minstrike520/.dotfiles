@@ -23,6 +23,7 @@ export ALSA_CARD=CMQ3
 # aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias ip='ip --color=auto'
 alias gitlog='git log --oneline'
 alias yays='yay -S --noconfirm --answeredit=None --answerdiff=None'
 
