@@ -8,7 +8,7 @@ sudo locale-gen
 # Applications
 sudo pacman -Syu
 ## CLI
-sudo pacman -S git github-cli vim nvim btop kdeconnect less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip
+sudo pacman -S git github-cli vim nvim btop kdeconnect less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget
 ## GUI Essentials
 sudo pacman -S plasma sddm konsole kate kwrite dolphin filelight  tlp viewnior openbsd-netcat  partitionmanager dosfstools vlc alsa-utils ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
 ## GUI Additional
