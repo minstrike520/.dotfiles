@@ -11,9 +11,9 @@ stow_flags="--verbose"
 while true; do
   case "$1" in
     -f|--force)
-      stow_flags="$stow_flags --override .* --adopt"
       echo "Are you sure to override the existing files in the file system (if any)?"
       read
+      f_force=true
       shift
       ;;
     --)
@@ -28,9 +28,21 @@ while true; do
 done
 
 if [[ $# -eq 0 ]]; then
-  stow -d ./ -t $HOME/ */ $stow_flags
+  echo $(pwd)
+  targets=*
 else
-  for target in "$@"; do
-    stow -d ./ -t $HOME/ $target $stow_flags
-  done
+  targets=$@
 fi
+
+
+for target in $targets; do
+  if [[ $f_force ]]; then
+    pushd $target
+    target_contents=$target/*
+    popd
+    pushd $HOME/
+    # rm -r "$target_contents"
+    popd
+  fi
+  stow -d ./ -t $HOME/ $target $stow_flags
+done
