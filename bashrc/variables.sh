@@ -10,4 +10,9 @@ RESET="\033[0m"
 # \h: hostname (short)
 # \W: basename of current working directory
 # \$: displays '#' if root, '$' otherwise
-export PS1="${GREEN}\u@\h${RESET} ${BLUE}\W${RESET}\$ "
+#
+# Note: \[\] brackets are used to mark non-printable characters 
+# (e.g. color codes)
+# This ensures Bash correctly calculates the prompt length and prevents
+# display issues like incorrect cursor positioning and line wrapping
+export PS1="\[${GREEN}\]\u@\h\[${RESET}\] \[${BLUE}\]\W\[${RESET}\]\$ "
