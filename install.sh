@@ -28,21 +28,41 @@ while true; do
 done
 
 if [[ $# -eq 0 ]]; then
-  echo $(pwd)
-  targets=*
+  targets=$(ls -A)
 else
   targets=$@
 fi
 
-
 for target in $targets; do
   if [[ $f_force ]]; then
-    pushd $target
-    target_contents=$target/*
-    popd
-    pushd $HOME/
-    # rm -r "$target_contents"
-    popd
+    pushd $target > /dev/null
+    target_contents=$(ls -A)
+    echo ====RM TARGET \($target\) :====
+    for content in $target_contents; do
+      echo $HOME  / $content
+    done
+    echo ========
+    echo
+    popd > /dev/null
+  fi
+done
+
+echo
+echo "CHECK AGAIN! IF YOU PROCEED, THE FILE ABOVE WILL BE ERASED."
+echo
+read
+
+for target in $targets; do
+  echo ====STOW TARGET \($target\) :====
+  if [[ $f_force ]]; then
+    pushd $target > /dev/null
+    target_contents=$(ls -A)
+    for content in $target_contents; do
+        rm -r $HOME/$content
+    done
+        popd > /dev/null
   fi
   stow -d ./ -t $HOME/ $target $stow_flags
+  echo ========
+  echo 
 done
