@@ -5,6 +5,10 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+echo_info() {
+  echo -e "${BLUE}[INFO]${RESET} $@"
+}
+
 echo_warn() {
   echo -e "${YELLOW}[WARN]${RESET} $@"
 }
@@ -12,6 +16,10 @@ echo_warn() {
 echo_error() {
   echo -e "${RED}[ERROR]${RESET} $@"
 }
+
+export -f echo_info
+export -f echo_warn
+export -f echo_error
 
 safe_source() {
   if [ -f "$1" ]; then
@@ -26,6 +34,10 @@ BASH_CONFIG_DIR="$HOME/.dotfiles/bashrc"
 safe_source "$BASH_CONFIG_DIR/variables.sh"
 safe_source "$BASH_CONFIG_DIR/aliases.sh"
 safe_source "$BASH_CONFIG_DIR/utils.sh"
+
+if [[ -v TERMUX_VERSION ]]; then
+  export $ROOTFS_DIR=/data/data/com.termux/files
+fi
 
 # Get peripheral ENV
 safe_source "$HOME/.peripherals.sh"

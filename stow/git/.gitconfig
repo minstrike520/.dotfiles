@@ -5,10 +5,8 @@
 	email = minstrike520@gmail.com
 	name = minstrike520
 [credential "https://github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+	helper = !$ROOTFS_DIR/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper =
-	helper = !/usr/bin/gh auth git-credential
+	helper = !$ROOTFS_DIR/usr/bin/gh auth git-credential
 [safe]
 	directory = /storage/emulated/0/Documents/Obsidian/StudyingSpace_Phone
