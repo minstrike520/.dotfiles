@@ -34,9 +34,13 @@ BASH_CONFIG_DIR="$HOME/.dotfiles/bashrc"
 safe_source "$BASH_CONFIG_DIR/variables.sh"
 safe_source "$BASH_CONFIG_DIR/aliases.sh"
 safe_source "$BASH_CONFIG_DIR/utils.sh"
+safe_source "$BASH_CONFIG_DIR/de_specific.sh"
 
 if [[ -v TERMUX_VERSION ]]; then
-  export $ROOTFS_DIR=/data/data/com.termux/files
+  export LANG="en_US.UTF-8"
+fi
+if grep -q "Raspberry Pi" /proc/cpuinfo; then
+  alias temp="vcgencmd measure_temp"
 fi
 
 # Get peripheral ENV
@@ -50,20 +54,7 @@ fi
 if [[ "$DEV_NAME" == "laptop" ]]; then
   # ALSA special setup for my laptop
   export ALSA_CARD=CMQ3
-  safe_source "$BASH_CONFIG_DIR/de_specific.sh"
-elif [[ "$DEV_NAME" == "MiPad" ]]; then
-  export LANG="en_US.UTF-8"
-
+fi
+if [[ "$DEV_NAME" == "MiPad" ]]; then
   unset LD_PRELOAD
-
-  export PATH=$PATH:$HOME/.fluttermux/flutter/bin
-  export ANDROID=$HOME/.fluttermux/Android/
-  export PATH=$ANDROID/platform-tools:$PATH
-  export PATH=$ANDROID/cmdline-tools/latest/bin:$PATH
-  export PATH=$ANDROID/cmdline-tools/latest:$PATH
-  export ANDROID_SDK=$HOME/$ANDROID
-  export PATH=$ANDROID_SDK:$PATH
-  export JAVA_HOME=$HOME/.fluttermux/jdk-19.0.2
-  export PATH=$PATH:$JAVA_HOME/bin
-  export _JAVA_OPTIONS=-Djava.io.tmpdir=$PREFIX/tmp
 fi
