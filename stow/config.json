@@ -1,0 +1,9 @@
+{
+  "bash": [
+    ".bash_logout", ".bashrc", ".bash_profile"
+  ],
+  "fcitx5": [ ".config/fcitx5/" ],
+  "git": [ ".gitconfig" ],
+  "nvim": [ ".config/nvim/" ],
+  "ssh": [ ".ssh/config" ]
+}
