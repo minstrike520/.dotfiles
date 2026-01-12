@@ -7,12 +7,17 @@ sudo locale-gen
 
 # Applications
 sudo pacman -Syu
-## CLI
-sudo pacman -S git github-cli vim nvim btop kdeconnect less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget
+## CLI Essentials
+sudo pacman -S git github-cli vim nvim kdeconnect less tree dust unrar man-db stow openssh zip unzip wget
+sudo pacman -S --needed base-devel
+
+## CLI Additional
+# sudo pacman -S ntfs-3g rustup
+
 ## GUI Essentials
-sudo pacman -S plasma sddm konsole kate kwrite dolphin filelight  tlp viewnior openbsd-netcat  partitionmanager dosfstools vlc alsa-utils ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
+sudo pacman -S plasma sddm konsole kate kwrite dolphin filelight tlp viewnior openbsd-netcat partitionmanager vlc alsa-utils ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
 ## GUI Additional
-sudo pacman -S  discord  zed
+sudo pacman -S dosfstools
 
 # AUR Applications
 cd ~/
