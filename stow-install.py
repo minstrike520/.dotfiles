@@ -8,33 +8,15 @@ import os
 from pathlib import Path
 import json
 
+# === COLOR_PRINT
 COLOR_PRINT_DBG=True
-
-def print_err(*args, **kwargs):
-    print('\033[31m', end='')
-    print('[Error] ', end='')
-    print('\033[0m', end='')
-    print(*args, **kwargs)
-
-def print_info(*args, **kwargs):
-    print('\033[32m', end='')
-    print('[Info] ', end='')
-    print('\033[0m', end='')
-    print(*args, **kwargs)
-
+def print_err(*args, **kwargs): print('\033[31m[Error] \033[0m', end=''); print(*args, **kwargs)
+def print_info(*args, **kwargs): print('\033[32m[Info] \033[0m', end=''); print(*args, **kwargs)
+def print_warn(*args, **kwargs): print('\033[33m[Warn] \033[0m', end=''); print(*args, **kwargs)
 def print_dbg(*args, **kwargs):
-    if not COLOR_PRINT_DBG:
-        return
-    print('\033[34m', end='')
-    print('[DEBUG] ', end='')
-    print('\033[0m', end='')
-    print(*args, **kwargs)
-
-def print_warn(*args, **kwargs):
-    print('\033[33m', end='')
-    print('[Warn] ', end='')
-    print('\033[0m', end='')
-    print(*args, **kwargs)
+    if not COLOR_PRINT_DBG: return
+    print('\033[34m[DEBUG] \033[0m', end=''); print(*args, **kwargs)
+# /=== COLOR_PRINT
 
 BASE_DIR = Path.home()
 STOW = Path.home() / '.dotfiles/stow'
