@@ -7,17 +7,18 @@ sudo locale-gen
 
 # Applications
 sudo pacman -Syu
-## CLI Essentials
-sudo pacman -S git github-cli vim nvim kdeconnect less tree dust unrar man-db stow openssh zip unzip wget
-sudo pacman -S --needed base-devel
-
-## CLI Additional
-# sudo pacman -S ntfs-3g rustup
-
+## CLI
+sudo pacman -S git github-cli vim nvim htop less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget bash-completion
 ## GUI Essentials
-sudo pacman -S plasma sddm konsole kate kwrite dolphin filelight tlp viewnior openbsd-netcat partitionmanager vlc alsa-utils ttf-jetbrains-mono-nerd noto-fonts noto-fonts-cjk
-## GUI Additional
-sudo pacman -S dosfstools
+sudo pacman -S plasma sddm noto-fonts noto-fonts-cjk ttf-jetbrains-mono-nerd wl-clipboard
+
+## Input methods
+sudo pacman -S fcitx5 fcitx5-chewing fcitx5-qt fcitx5-gtk fcitx5-configtool fcitx5-anthy
+
+sudo systemctl enable --now sddm
+
+## GUI Apps
+sudo pacman -S konsole kate kwrite dolphin filelight tlp viewnior openbsd-netcat partitionmanager dosfstools vlc alsa-utils   kdeconnect
 
 # AUR Applications
 cd ~/
@@ -30,13 +31,6 @@ yay -S --noconfirm --answerdiff=None --answeredit=None google-chrome envycontrol
 ## GUI Additional
 yay -S --noconfirm --answerdiff=None --answeredit=None mindustry-bin
 
-# Input methods
-sudo pacman -S fcitx5 fcitx5-chewing fcitx5-qt fcitx5-gtk fcitx5-configtool
-
 yay -S --noconfirm --answerdiff=None --answeredit=None anthy-unicode kasumi-unicode
 
-sudo pacman -S fcitx5-anthy
-
 # gh auth login --web --git-protocol https
-
-sudo systemctl enable --now sddm
