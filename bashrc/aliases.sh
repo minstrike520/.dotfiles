@@ -10,3 +10,15 @@ alias yay='yay --answeredit=None --answerdiff=None --removemake=None --answercle
 alias ffind='find . -iname'
 alias edit='nvim'
 alias klear='printf "\E[H\E[3J"'
+alias nivm='nvim'
+alias sdat='systemctl status'
+alias sdop='sudo systemctl stop'
+alias sdart='sudo systemctl start'
+alias sden='sudo systemctl enable'
+alias sdis='sudo systemctl disable'
+alias sdres='sudo systemctl restart'
+alias op='xdg-open'
+
+aliases-check() {
+  cat $HOME/.dotfiles/bashrc/aliases.sh
+}

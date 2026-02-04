@@ -23,7 +23,7 @@ def sub(input_path, pattern_name, output_path=None, modify_self=False):
         replacement = pattern['replacement']
     elif pattern['type'] == 'exp':
         target = f'# EXP {pattern_name}'
-        replacement = pattern['content']
+        replacement = pattern['content'].removesuffix('\n')
 
     _res = re.subn(
         target,

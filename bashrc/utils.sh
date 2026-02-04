@@ -2,6 +2,34 @@
 # utils.sh
 #
 
+mmount() {
+  if [ $# -ne 2 ]; then
+    echo "Usage: mmount DEV NAME"
+    return 1
+  fi
+
+  sudo mkdir -p "/run/media/$USER/$2"
+  sudo chown $USER "/run/media/$USER/$2"
+  sudo mount "$1" "/run/media/$USER/$2"
+}
+
+vicd() {
+  local args="$@"
+  if [[ $args == "" ]]; then
+    args="."
+  fi
+  local dst="$(command vifm --choose-dir - "$args")"
+  if [ -z "$dst" ]; then
+    echo 'Directory picking cancelled/failed'
+    return 1
+  fi
+  cd "$dst"
+  if [ $? != 0 ]; then
+    echo_error "Error changing directory --"
+    echo -e "$dst"
+  fi
+}
+
 echo_warn() {
   echo -e "${YELLOW}[WARN]${RESET} $@"
 }

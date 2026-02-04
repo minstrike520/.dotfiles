@@ -5,6 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# export RED="\033[0;91m"
+# export GREEN="\033[0;92m"
+# export YELLOW="\033[0;93m"
+# export BLUE="\033[0;94m"
+# export RESET="\033[0m"
+
 echo_info() {
   echo -e "${BLUE}[INFO]${RESET} $@"
 }

@@ -3,8 +3,15 @@
 # import re
 import json
 
-def print_err(*args, **kwargs): print('\033[31m[Error] \033[0m', end=''); print(*args, **kwargs) 
-
+# === COLOR_PRINT
+COLOR_PRINT_DBG=True
+def print_err(*args, **kwargs): print('[31m[Error] [0m', end=''); print(*args, **kwargs)
+def print_info(*args, **kwargs): print('[32m[Info] [0m', end=''); print(*args, **kwargs)
+def print_warn(*args, **kwargs): print('[33m[Warn] [0m', end=''); print(*args, **kwargs)
+def print_dbg(*args, **kwargs):
+    if not COLOR_PRINT_DBG: return
+    print('[34m[DEBUG] [0m', end=''); print(*args, **kwargs)
+# /=== COLOR_PRINT
 
 def parse_range(range_str):
     r = range_str.split(':')
@@ -68,4 +75,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-# EXP py.ifmain
