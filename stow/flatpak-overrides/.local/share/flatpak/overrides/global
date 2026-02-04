@@ -1,0 +1,6 @@
+[Context]
+sockets=inherit-wayland-socket;system-bus;session-bus;wayland
+
+[Environment]
+QT_IM_MODULE=fcitx
+GTK_IM_MODULE=fcitx

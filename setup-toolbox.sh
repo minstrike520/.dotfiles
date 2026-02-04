@@ -1,5 +1,5 @@
 CLI_ESSENTIALS="git github-cli vim nvim htop less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget bash-completion docker"
-GUI_ESSENTIALS="plasma sddm noto-fonts noto-fonts-cjk ttf-jetbrains-mono-nerd wl-clipboard"
+GUI_ESSENTIALS="plasma sddm noto-fonts noto-fonts-cjk ttf-jetbrains-mono-nerd wl-clipboard flatseal"
 GUI_IM="fcitx5 fcitx5-chewing fcitx5-qt fcitx5-gtk fcitx5-configtool fcitx5-anthy"
 
 GUI_APPS="ark konsole kate kwrite dolphin filelight tlp viewnior openbsd-netcat partitionmanager dosfstools vlc vlc-plugins-all alsa-utils kdeconnect"
