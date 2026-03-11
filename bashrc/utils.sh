@@ -2,6 +2,30 @@
 # utils.sh
 #
 
+jc() {
+    local query=$1
+    
+    # 判斷是否完全沒有輸入參數
+    if [ -z "$query" ]; then
+        echo "No search term provided. Running default: just --list"
+        just --list
+        return 0
+    fi
+
+    shift # 移除第一個參數 (query)
+    
+    # 使用 fzf 進行模糊匹配
+    local recipe=$(just --summary | tr ' ' '\n' | fzf -f "$query" | head -n 1)
+
+    if [ -n "$recipe" ]; then
+        echo "Matched: $recipe"
+        just "$recipe" "$@"
+    else
+        echo "Error: No matching recipe found for '$query'"
+        return 1
+    fi
+}
+
 mmount() {
   if [ $# -ne 2 ]; then
     echo "Usage: mmount DEV NAME"
