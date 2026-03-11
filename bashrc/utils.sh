@@ -2,6 +2,39 @@
 # utils.sh
 #
 
+compile-md() {
+  pandoc hw1.md -o hw1.pdf \
+    --pdf-engine=xelatex \
+    -V geometry="margin=1.5cm" \
+    -H <( \
+        echo -e \
+  "\\usepackage{xeCJK}"\
+  "\\setCJKmainfont{Noto Serif CJK TC}"\
+  "\\\\newcommand{\\pu}[1]{\\,\\mathrm{#1}}"\
+      )
+}
+
+
+is_relative() {
+    local p="$1"
+    if [[ "$p" == /* || "$p" == ~* ]]; then
+        return 1
+    else
+        return 0
+    fi
+}
+
+kdolphin() {
+  if [[ -z $1 ]]; then
+    real_path=
+  elif is_relative $1; then
+    real_path=$(pwd)/$1
+  else
+    real_path=$1
+  fi
+  kstart dolphin $real_path
+}
+
 echo_warn() {
   echo -e "${YELLOW}[WARN]${RESET} $@"
 }

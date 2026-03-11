@@ -1,5 +1,6 @@
 [Context]
 sockets=inherit-wayland-socket;system-bus;session-bus;wayland
+filesystems=xdg-config/fontconfig:ro
 
 [Environment]
 QT_IM_MODULE=fcitx
