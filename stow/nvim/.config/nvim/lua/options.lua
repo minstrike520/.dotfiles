@@ -6,6 +6,8 @@ vim.filetype.add({
   }
 })
 
+-- let NERDTreeShowHidden=1
+
 -- add yours here!
 
 -- local o = vim.o

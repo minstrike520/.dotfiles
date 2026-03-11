@@ -2,6 +2,58 @@
 # utils.sh
 #
 
+jc() {
+    local query=$1
+    
+    # 判斷是否完全沒有輸入參數
+    if [ -z "$query" ]; then
+        echo "No search term provided. Running default: just --list"
+        just --list
+        return 0
+    fi
+
+    shift # 移除第一個參數 (query)
+    
+    # 使用 fzf 進行模糊匹配
+    local recipe=$(just --summary | tr ' ' '\n' | fzf -f "$query" | head -n 1)
+
+    if [ -n "$recipe" ]; then
+        echo "Matched: $recipe"
+        just "$recipe" "$@"
+    else
+        echo "Error: No matching recipe found for '$query'"
+        return 1
+    fi
+}
+
+mmount() {
+  if [ $# -ne 2 ]; then
+    echo "Usage: mmount DEV NAME"
+    return 1
+  fi
+
+  sudo mkdir -p "/run/media/$USER/$2"
+  sudo chown $USER "/run/media/$USER/$2"
+  sudo mount "$1" "/run/media/$USER/$2"
+}
+
+vicd() {
+  local args="$@"
+  if [[ $args == "" ]]; then
+    args="."
+  fi
+  local dst="$(command vifm --choose-dir - "$args")"
+  if [ -z "$dst" ]; then
+    echo 'Directory picking cancelled/failed'
+    return 1
+  fi
+  cd "$dst"
+  if [ $? != 0 ]; then
+    echo_error "Error changing directory --"
+    echo -e "$dst"
+  fi
+}
+
 compile-md() {
   pandoc hw1.md -o hw1.pdf \
     --pdf-engine=xelatex \

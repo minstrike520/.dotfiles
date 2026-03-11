@@ -13,3 +13,16 @@ alias klear='printf "\E[H\E[3J"'
 alias aur='pacseek -s'
 alias myps='LANG= ps auxf | cut -c 1-$COLUMNS'
 alias hjust='just --justfile ~/.dotfiles/Justfile'
+alias nivm='nvim'
+alias op='xdg-open'
+
+alias sdat='systemctl status'
+alias sdop='sudo systemctl stop'
+alias sdart='sudo systemctl start'
+alias sden='sudo systemctl enable'
+alias sdis='sudo systemctl disable'
+alias sdres='sudo systemctl restart'
+
+aliases-check() {
+  cat $HOME/.dotfiles/bashrc/aliases.sh
+}

@@ -1,0 +1,10 @@
+{
+    "py.ifmain": {
+        "type": "exp",
+        "content": "if __name__ == \"__main__\":\n    main()\n"
+    },
+    "py.colorprint": {
+        "type": "exp",
+        "content": "# === COLOR_PRINT\nCOLOR_PRINT_DBG=True\ndef print_err(*args, **kwargs): print('\\033[31m[Error] \\033[0m', end=''); print(*args, **kwargs)\ndef print_info(*args, **kwargs): print('\\033[32m[Info] \\033[0m', end=''); print(*args, **kwargs)\ndef print_warn(*args, **kwargs): print('\\033[33m[Warn] \\033[0m', end=''); print(*args, **kwargs)\ndef print_dbg(*args, **kwargs):\n    if not COLOR_PRINT_DBG: return\n    print('\\033[34m[DEBUG] \\033[0m', end=''); print(*args, **kwargs)\n# /=== COLOR_PRINT\n"
+    }
+}
