@@ -15,4 +15,15 @@ map('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', {desc = "LSP p
 map('n', '<leader>gn', '<cmd>Gitsigns nav_hunk next<CR>', {desc = "Git next hunk"})
 map('n', '<leader>gp', '<cmd>Gitsigns nav_hunk next<CR>', {desc = "Git previous hunk"})
 
+-- open config
+vim.keymap.set("n", "<leader>cf", ":e ~/.config/nvim<CR>", { desc = "Configuration" })
+
+-- better indenting in visual mode
+vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
+vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
+
+-- center screen when jumping
+vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
+vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
+
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
