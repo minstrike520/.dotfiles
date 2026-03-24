@@ -27,6 +27,6 @@ aliases-check() {
   cat $HOME/.dotfiles/bashrc/aliases.sh
 }
 
-alias f='cd $(fd --type d --hidden --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv | fzf)'
+alias f='cd $(fd --type d --hidden --exclude .git --exclude node_module --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv --exclude .vscode-server --exclude .vscode --exclude go/pkg/mod --exclude .local/share/nvim | fzf)'
 
 alias groot='cd "$(git rev-parse --show-toplevel)"'

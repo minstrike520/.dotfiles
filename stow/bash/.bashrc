@@ -47,6 +47,8 @@ if [[ -v TERMUX_VERSION ]]; then
 fi
 if grep -q "Raspberry Pi" /proc/cpuinfo; then
   alias temp="vcgencmd measure_temp"
+  alias fd="fdfind"
+  export PATH="$PATH:/opt/nvim/"
 fi
 
 # Get peripheral ENV
