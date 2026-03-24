@@ -84,7 +84,7 @@ kdolphin() {
   else
     real_path=$1
   fi
-  kstart dolphin $real_path
+  kstart dolphin "$real_path"
 }
 
 echo_warn() {
