@@ -12,6 +12,10 @@ return {
       require "configs.lspconfig"
     end,
   },
+  { 
+    "xiyaowong/transparent.nvim",
+    lazy = false,
+  },
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
