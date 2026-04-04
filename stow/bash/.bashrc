@@ -48,7 +48,13 @@ fi
 if grep -q "Raspberry Pi" /proc/cpuinfo; then
   alias temp="vcgencmd measure_temp"
   alias fd="fdfind"
-  export PATH="$PATH:/opt/nvim/"
+  export PATH="$PATH:/opt/nvim/:/opt/zellij/"
+  alias gcc="gcc -o aarch64.default.exe"
+  alias gcc="gcc -o aarch64.default.exe"
+fi
+
+if [[ -v KITTY_WINDOW_ID ]]; then
+  alias ssh="kitten ssh"
 fi
 
 # Get peripheral ENV
