@@ -30,3 +30,4 @@ aliases-check() {
 alias f='cd "$(fd --type d --hidden --exclude .git --exclude node_module --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv --exclude .vscode-server --exclude .vscode --exclude go/pkg/mod --exclude .local/share/nvim --exclude .cargo/registry --exclude .rustup/toolchains --exclude .yarn --exclude .config/Code --exclude .antigravity --exclude .zig-cache --exclude .local/share/klipper --exclude .SynologyDrive --exclude .local/share/osu --exclude .wine --exclude .var --exclude .local/share/zed --exclude sketchbook --exclude curseforge --exclude .local/share/pnpm --exclude Trash --exclude CacheStorage --exclude "Code Cache" --exclude Cache --exclude .config/Antigravity --exclude ".config/Code - Insiders" --exclude ".config/Code" --exclude .local/share/nvim  | fzf)"'
 
 alias groot='cd "$(git rev-parse --show-toplevel)"'
+alias pdlogin='pd login archlinux --user bladeisoe --shared-tmp --termux-home'
