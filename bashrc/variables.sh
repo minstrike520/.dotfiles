@@ -17,3 +17,4 @@ export RESET="\033[0m"
 # display issues like incorrect cursor positioning and line wrapping
 export PS1="\[${GREEN}\]\u@\h\[${RESET}\] \[${BLUE}\]\W\[${RESET}\]\$ "
 export EDITOR=nvim
+export MY_TAILNET=tail544a05.ts.net
