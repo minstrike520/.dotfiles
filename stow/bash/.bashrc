@@ -62,6 +62,7 @@ fi
 if [[ "$DEV_NAME" == "laptop" ]]; then
   # ALSA special setup for my laptop
   export ALSA_CARD=CMQ3
+  alias gcc="gcc -o x86_64.default.exe"
 fi
 if [[ "$DEV_NAME" == "MiPad" ]]; then
   unset LD_PRELOAD
