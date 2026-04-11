@@ -16,6 +16,10 @@ return {
     "xiyaowong/transparent.nvim",
     lazy = false,
   },
+  {
+    "sindrets/diffview.nvim",
+    lazy = false,
+  }
 
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
