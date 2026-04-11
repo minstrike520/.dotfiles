@@ -1,14 +1,16 @@
-CLI_ESSENTIALS="git github-cli vim nvim htop less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget bash-completion docker tailscale"
-GUI_ESSENTIALS="plasma sddm noto-fonts noto-fonts-cjk ttf-jetbrains-mono-nerd wl-clipboard flatseal"
+CLI_ESSENTIALS="base-devel git github-cli vim nvim htop less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget bash-completion docker tailscale jq pv fzf fd"
+GUI_ESSENTIALS="plasma sddm noto-fonts noto-fonts-cjk ttf-jetbrains-mono-nerd wl-clipboard flatseal kitty"
 GUI_IM="fcitx5 fcitx5-chewing fcitx5-qt fcitx5-gtk fcitx5-configtool fcitx5-anthy fcitx5-hangul"
 
 GUI_APPS="ark konsole kate kwrite dolphin filelight tlp viewnior openbsd-netcat partitionmanager dosfstools vlc vlc-plugins-all alsa-utils kdeconnect"
 
-ASPC_NVIDIA="nvidia-580xx-dkms nvidia-580xx-utils"
+ASPC_NVIDIA="nvidia-580xx-dkms nvidia-580xx-utils linux-headers"
+
+TUF_NVIDIA="nvidia-open-dkms nvidia-prime nvidia-utils linux-headers"
 
 # ---
 
-AUR_APPS="google-chrome envycontrol onlyoffice-bin visual-studio-code-bin pacseek obsidian-bin tlpui ttf-genryu-git apple-fonts otf-apple-pingfang konsave synology-drive"
+AUR_APPS="google-chrome envycontrol onlyoffice-bin visual-studio-code-bin pacseek obsidian-bin tlpui ttf-genryu-git apple-fonts otf-apple-pingfang konsave synology-drive neovim-nvim-treesitter"
 
 alias dotinst-sync="sudo pacman -S --needed"
 
