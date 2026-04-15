@@ -20,25 +20,13 @@ Layout=
 
 [Groups/0/Items/2]
 # Name
-Name=cangjie5
+Name=anthy
 # Layout
 Layout=
 
 [Groups/0/Items/3]
 # Name
-Name=anthy
-# Layout
-Layout=
-
-[Groups/0/Items/4]
-# Name
 Name=hangul
-# Layout
-Layout=
-
-[Groups/0/Items/5]
-# Name
-Name=pinyin
 # Layout
 Layout=
 

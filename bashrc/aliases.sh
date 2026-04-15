@@ -32,3 +32,7 @@ alias f='cd "$(fd --type d --hidden --exclude .git --exclude node_module --exclu
 
 alias groot='cd "$(git rev-parse --show-toplevel)"'
 alias pdlogin='pd login archlinux --user bladeisoe --shared-tmp --termux-home'
+
+alias ztar="tar -I \"zstd -T0 --long -v\""
+
+alias docpan='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) ghcr.io/minstrike520/pandoc-docker:main'
