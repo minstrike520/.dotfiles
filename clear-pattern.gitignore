@@ -1,0 +1,17 @@
+~/.cache/
+~/.rustup/
+~/.vscode/
+~/.cargo/
+~/.npm/
+~/go/
+~/.local/share/nvim/
+~/.local/share/zed/
+~/.local/share/pnpm/
+~/.config/google-chrome-unstable/
+~/.config/google-chrome/
+~/.config/Code/
+~/.config/CurseForge/
+~/.config/obsidian/
+~/.config/Code - Insiders/
+~/.config/Antigravity/
+~/.config/Xmind/
