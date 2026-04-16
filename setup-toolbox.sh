@@ -1,4 +1,4 @@
-CLI_ESSENTIALS="base-devel git github-cli vim nvim htop less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget bash-completion docker tailscale jq pv fzf fd just uv"
+CLI_ESSENTIALS="base-devel git github-cli vim nvim htop less tree rustup dust ntfs-3g unrar man-db stow openssh zip unzip wget bash-completion docker tailscale jq pv fzf fd just uv imagemagick"
 GUI_ESSENTIALS="plasma sddm noto-fonts noto-fonts-cjk ttf-jetbrains-mono-nerd wl-clipboard flatseal kitty"
 GUI_IM="fcitx5 fcitx5-chewing fcitx5-qt fcitx5-gtk fcitx5-configtool fcitx5-anthy fcitx5-hangul"
 
