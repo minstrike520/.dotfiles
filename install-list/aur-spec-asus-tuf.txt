@@ -1,0 +1,4 @@
+linux-headers
+nvidia-open-dkms
+nvidia-prime
+nvidia-utils

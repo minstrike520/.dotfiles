@@ -1,0 +1,4 @@
+git
+mingw-w64-ucrt-x86_64-github-cli
+mingw-w64-ucrt-x86_64-neovim
+stow

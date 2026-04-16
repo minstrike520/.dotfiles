@@ -1,0 +1,13 @@
+apple-fonts
+envycontrol
+google-chrome
+konsave
+neovim-nvim-treesitter
+obsidian-bin
+onlyoffice-bin
+otf-apple-pingfang
+pacseek
+synology-drive
+tlpui
+ttf-genryu-git
+visual-studio-code-bin
