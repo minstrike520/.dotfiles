@@ -1,0 +1,5 @@
+sync_address = "http://atuin.blade.local"
+inline_height = 14
+
+[theme]
+name = "marine"
