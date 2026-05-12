@@ -2,7 +2,7 @@ function fish_greeting
     echo (set_color yellow)"現在時間："(date +'%Y年%m月%d日（%a）%H:%M GMT%:z')
     set_color cyan
 
-    set motto_folder "/home/blade520/random-motd/files/"
+    set motto_folder "$HOME/random-motd/files/"
     if not test -d "$motto_folder"
         echo "Error: Directory $motto_folder not found."
         return

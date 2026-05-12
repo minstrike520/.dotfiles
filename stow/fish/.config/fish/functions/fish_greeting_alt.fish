@@ -2,8 +2,8 @@ function fish_greeting
     echo (set_color yellow)"現在時間："(date +'%Y年%m月%d日（%a）%H:%M GMT%:z')
     echo (set_color cyan)"祝你有美好的一天！"
 
-    set motto_folder "/home/blade520/random-motd/files/"
-    set pics_folder "/home/blade520/pics/random-favicon/"
+    set motto_folder "$HOME/random-motd/files/"
+    set pics_folder "$HOME/pics/random-favicon/"
     if not test -d "$motto_folder"
         echo "Error: Directory $motto_folder not found."
         return
