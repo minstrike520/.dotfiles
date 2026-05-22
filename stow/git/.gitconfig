@@ -12,3 +12,8 @@
 	helper = !$PREFIX/bin/gh auth git-credential
 [safe]
 	directory = /storage/emulated/0/Documents/Obsidian/StudyingSpace_Phone
+[alias]
+	s = status
+	d = diff
+	l = log --oneline --decorate --all --graph
+	a = add

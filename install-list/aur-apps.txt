@@ -8,6 +8,7 @@ onlyoffice-bin
 otf-apple-pingfang
 pacseek
 synology-drive
+ttf-cmu-serif
 tlpui
 ttf-genryu-git
 visual-studio-code-bin

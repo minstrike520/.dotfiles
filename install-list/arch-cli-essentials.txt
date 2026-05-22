@@ -1,5 +1,7 @@
 base-devel
 bash-completion
+bat
+traceroute
 docker
 dust
 fd

@@ -11,7 +11,7 @@ if test -n "$DEV_NAME"
         set -e LD_PRELOAD
     end
 else
-    echo_warn "config.fish: \$DEV_NAME is not set."
+    echo "config.fish: \$DEV_NAME is not set."
 end
 
 if status is-interactive
