@@ -12,6 +12,7 @@
 	helper = !$PREFIX/bin/gh auth git-credential
 [safe]
 	directory = /storage/emulated/0/Documents/Obsidian/StudyingSpace_Phone
+	directory = /storage/emulated/0/Documents/Obsidian/vault-v5
 [alias]
 	s = status
 	d = diff
