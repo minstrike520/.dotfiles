@@ -41,10 +41,12 @@ elseif vim.env.SSH_CONNECTION then
     }
   end
 end
-local client_ip = vim.fn.split(vim.fn.getenv("SSH_CONNECTION"), " ")[1]
-if client_ip then
-    local client_hostname = vim.fn.system("host " .. client_ip):match("pointer (.-)%.?$")
-    print("連線來自: " .. (client_hostname or client_ip))
+local ssh_conn = vim.fn.getenv("SSH_CONNECTION")
+if ssh_conn ~= vim.NIL and ssh_conn ~= "" then
+    local client_ip = vim.fn.split(ssh_conn, " ")[1]
+    if client_ip then
+        print("連線來自: " .. client_ip)
+    end
 end
 
 
