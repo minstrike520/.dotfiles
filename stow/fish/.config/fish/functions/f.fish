@@ -1,3 +1,50 @@
 function f
-  cd "$(fd --type d --hidden --exclude .git --exclude Library --exclude node_module --exclude node_modules --exclude .cache --exclude .npm --exclude .mozilla --exclude .meteor --exclude .nv --exclude .vscode-server --exclude .vscode --exclude go/pkg/mod --exclude .local/share/nvim --exclude .cargo/registry --exclude .rustup/toolchains --exclude .yarn --exclude .config/Code --exclude .antigravity --exclude .zig-cache --exclude .local/share/klipper --exclude .SynologyDrive --exclude .local/share/osu --exclude .wine --exclude .var --exclude .local/share/zed --exclude sketchbook --exclude curseforge --exclude .local/share/pnpm --exclude Trash --exclude CacheStorage --exclude "Code Cache" --exclude Cache --exclude .config/Antigravity --exclude ".config/Code - Insiders" --exclude ".config/Code" --exclude .local/share/nvim  | fzf)"
+    set -l targe_excludes \
+        ".config/Code - Insiders" \
+        ".config/Code" \
+        "Code Cache" \
+        .SynologyDrive \
+        .antigravity \
+        .cache \
+        .cargo/registry \
+        .config/Antigravity \
+        .config/Code \
+        .config/google-chrome \
+        .git \
+        .local/share/klipper \
+        .local/share/nvim \
+        .local/share/osu \
+        .local/share/pnpm \
+        .local/share/zed \
+        .meteor \
+        .mozilla \
+        .npm \
+        .nv \
+        .rustup/toolchains \
+        .var \
+        .vscode \
+        .vscode-server \
+        .wine \
+        .yarn \
+        .zig-cache \
+        Cache \
+        CacheStorage \
+        Library \
+        Trash \
+        curseforge \
+        go/pkg/mod \
+        node_module \
+        node_modules \
+        sketchbook \
+
+    set -l exclude_args
+    for dir in $targe_excludes
+        set exclude_args $exclude_args --exclude $dir
+    end
+
+    set -l target_dir (fd --type d --hidden -I $exclude_args | fzf | string collect)
+
+    if test -n "$target_dir"
+        cd "$target_dir"
+    end
 end
