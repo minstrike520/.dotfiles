@@ -18,3 +18,6 @@
 	d = diff
 	l = log --oneline --decorate --all --graph
 	a = add
+[credential "http://gitea.rpi.local"]
+	helper = 
+	helper = !tea login helper
