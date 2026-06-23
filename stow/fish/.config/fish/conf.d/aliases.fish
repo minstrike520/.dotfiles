@@ -18,14 +18,6 @@ alias hjust='just --justfile ~/.dotfiles/Justfile'
 alias nivm='nvim'
 alias op='xdg-open'
 
-alias sdat='systemctl status'
-alias sdop='sudo systemctl stop'
-alias sdart='sudo systemctl start'
-alias sden='sudo systemctl enable'
-alias sdis='sudo systemctl disable'
-alias sdres='sudo systemctl restart'
-
-
 alias groot='cd "$(git rev-parse --show-toplevel)"'
 alias pdlogin='pd login archlinux --user bladeisoe --shared-tmp --termux-home'
 
