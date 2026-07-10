@@ -1,2 +1,6 @@
 stow/fcitx5/.config/fcitx5/conf/cached_layouts
 stow/nvim/.config/nvim/lazy-lock.json
+stow/ssh/.ssh/known_hosts.old
+stow/ssh/.ssh/known_hosts
+stow/ssh/.ssh/id_ed25519
+stow/ssh/.ssh/id_ed25519.pub
