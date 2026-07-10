@@ -9,3 +9,4 @@ abbr --add rr trash
 abbr --add sl ls
 abbr --add zipls unzip -l
 abbr --add zipsl unzip -l
+abbr --add n nvim
