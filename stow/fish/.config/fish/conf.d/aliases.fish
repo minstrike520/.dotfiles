@@ -24,3 +24,4 @@ alias pdlogin='pd login archlinux --user bladeisoe --shared-tmp --termux-home'
 alias ztar="tar -I \"zstd -T0 --long -v\""
 
 alias docpan='docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) ghcr.io/minstrike520/pandoc-docker:main'
+
