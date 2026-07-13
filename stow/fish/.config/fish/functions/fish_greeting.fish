@@ -1,4 +1,4 @@
-function fish_greeting
+function fish_greeting_with_motto
     echo (set_color yellow)"現在時間："(date +'%Y年%m月%d日（%a）%H:%M GMT%:z')
     set_color cyan
 
@@ -16,3 +16,9 @@ function fish_greeting
     end
 end
 
+function fish_greeting
+    echo (set_color yellow)"現在時間："(date +'%Y年%m月%d日（%a）%H:%M GMT%:z')
+    set_color cyan
+    echo -n "Current OS: "
+    cat /etc/os-release | grep "PRETTY_NAME" | sed -e 's/PRETTY_NAME=\"\(.*\)\"/\1/'
+end
