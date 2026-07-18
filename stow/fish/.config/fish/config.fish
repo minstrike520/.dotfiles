@@ -10,8 +10,6 @@ if test -n "$DEV_NAME"
     else if test "$DEV_NAME" = "MiPad"
         set -e LD_PRELOAD
     end
-else
-    echo "config.fish: \$DEV_NAME is not set."
 end
 
 if status is-interactive

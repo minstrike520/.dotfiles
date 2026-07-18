@@ -5,7 +5,6 @@
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip --color=auto'
-alias gitlog='git log --oneline --decorate --all --graph'
 alias dockerps='docker ps --format "{{.Names}}\t{{.Image}}\t{{.Status}}"'
 # alias paru='paru --noansweredit --noanswerdiff --noremovemake --noanswerclean'
 alias ffind='find . -iname'
@@ -18,7 +17,6 @@ alias hjust='just --justfile ~/.dotfiles/Justfile'
 alias nivm='nvim'
 alias op='xdg-open'
 
-alias groot='cd "$(git rev-parse --show-toplevel)"'
 alias pdlogin='pd login archlinux --user bladeisoe --shared-tmp --termux-home'
 
 alias ztar="tar -I \"zstd -T0 --long -v\""
