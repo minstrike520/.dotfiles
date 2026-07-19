@@ -14,10 +14,19 @@
 	directory = /storage/emulated/0/Documents/Obsidian/StudyingSpace_Phone
 	directory = /storage/emulated/0/Documents/Obsidian/vault-v5
 [alias]
-	s = status
 	d = diff
 	l = log --oneline --decorate --all --graph
+	lg = log --oneline --decorate --all --graph
+	st = status
+	ls = status
+	cm = commit
 	a = add
+	aa = add .
 [credential "http://gitea.rpi.local"]
 	helper = 
 	helper = !tea login helper
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

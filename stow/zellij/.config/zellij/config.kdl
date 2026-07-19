@@ -283,6 +283,8 @@ load_plugins {
 web_client {
     font "monospace"
 }
+
+default_shell "fish"
  
 // Use a simplified UI without special fonts (arrow glyphs)
 // Options:
