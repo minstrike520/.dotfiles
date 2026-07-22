@@ -18,3 +18,7 @@ if status is-interactive
   set -g fish_color_autosuggestion 999999
   bind ctrl-a 'cls' repaint
 end
+
+
+# Added by Antigravity CLI installer
+set -gx PATH "/home/bladeisoe/.local/bin" $PATH

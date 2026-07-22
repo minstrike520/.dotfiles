@@ -73,3 +73,7 @@ fi
 if [[ "$DEV_NAME" == "MiPad" ]]; then
   unset LD_PRELOAD
 fi
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/bladeisoe/.local/bin:$PATH"
