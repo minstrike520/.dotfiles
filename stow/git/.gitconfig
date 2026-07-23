@@ -19,7 +19,7 @@
 	lg = log --oneline --decorate --all --graph
 	st = status
 	ls = status
-	cm = commit
+	cm = commit -m
 	a = add
 	aa = add .
 [credential "http://gitea.rpi.local"]
