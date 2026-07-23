@@ -22,6 +22,7 @@
 	cm = commit -m
 	a = add
 	aa = add .
+  f = fetch
 [credential "http://gitea.rpi.local"]
 	helper = 
 	helper = !tea login helper
