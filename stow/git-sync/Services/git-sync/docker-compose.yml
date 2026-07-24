@@ -1,0 +1,24 @@
+# 採用 Docker Compose 的 extends 繼承機制
+# 如此 sync.sh 與 SSH Key 均封裝於 base 範本中，子服務自動繼承並合併 volumes，無需重複撰寫！
+
+services:
+  git-sync-vault:
+    extends: { file: docker-compose.base.yml, service: git-sync-base } # copy this
+    volumes: [ /home/bladeisoe/vault-v5:/home/1000/repo ]
+
+  git-sync-dotfiles:
+    extends: { file: docker-compose.base.yml, service: git-sync-base }
+    volumes: [ /home/bladeisoe/.dotfiles:/home/1000/repo ]
+
+  # git-sync-project2:
+  #   extends:
+  #     file: docker-compose.base.yml
+  #     service: git-sync-base
+  #   container_name: git-sync-project2
+  #   working_dir: /home/1000/repo
+  #   environment:
+  #     HOME: "/home/1000"
+  #     GIT_BRANCH: "main"
+  #     SYNC_INTERVAL: "120"
+  #   volumes:
+  #     - /path/to/another-repo:/home/1000/repo
