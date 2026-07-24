@@ -21,6 +21,7 @@
 	ls = status
 	ps = status
 	cm = commit -m
+  co = checkout
 	a = add
 	aa = add .
   f = fetch
