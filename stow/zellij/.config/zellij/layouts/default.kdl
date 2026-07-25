@@ -4,7 +4,7 @@ layout {
             plugin location="zellij:compact-bar"
         }
         pane size="30%" borderless=true {
-            plugin location="file:/home/$USER/.config/zellij/plugins/zellij-datetime.wasm" {
+            plugin location="file:$HOME/.config/zellij/plugins/zellij-datetime.wasm" {
               timezone1 "Taipei/8"
             }
         }
