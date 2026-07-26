@@ -1,4 +1,4 @@
-sync_address = "http://atuin.rpi.local"
+sync_address = "https://atuin.i.blade520.com"
 inline_height = 14
 
 [theme]
