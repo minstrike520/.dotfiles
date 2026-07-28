@@ -26,13 +26,13 @@ def get_git_info(path):
             "is_git": False,
             "remote": "[grey50]N/A[/]",
             "sync": "[grey50]N/A[/]",
-            "workspace": "[grey50]無 Git 倉庫[/]",
+            "workspace": "[grey50]NOT A REPO[/]",
             "clean_target": "[grey50]N/A[/]"
         }
 
     # 1. 遠端 Domain 與 同步狀態
     remote_url = run_command(["git", "remote", "get-url", "origin"], path)
-    remote_domain = "[yellow]沒有遠端[/]"
+    remote_domain = "[yellow]No remote[/]"
     sync_status = "[grey50]-[/]"
     
     if remote_url:
@@ -46,13 +46,13 @@ def get_git_info(path):
         if diff:
             ahead, behind = map(int, diff.split())
             if ahead == 0 and behind == 0:
-                sync_status = "[green]同步[/]"
+                sync_status = "[green]Up to date[/]"
             elif ahead > 0 and behind == 0:
-                sync_status = f"[cyan]超過遠端 (+{ahead})[/]"
+                sync_status = f"[cyan](+{ahead}) Ahead[/]"
             elif ahead == 0 and behind > 0:
-                sync_status = f"[red]落後遠端 (-{behind})[/]"
+                sync_status = f"[red](-{behind}) Behind[/]"
             else:
-                sync_status = "[bold yellow]混合狀態 (±)[/]"
+                sync_status = "[bold yellow]Mixed ±[/]"
         else:
             sync_status = "[dim]未追蹤遠端[/]"
 
@@ -61,11 +61,11 @@ def get_git_info(path):
     if not status_short:
         workspace = "[green]✔ Clean[/]"
     else:
-        workspace = "[bold red]✘ 有變更/未追蹤[/]"
+        workspace = "[bold red]✘ Modified[/]"
 
     # 3. 檢查是否有忽略的檔案 (通常是編譯產物 target)
     ignored_files = run_command(["git", "clean", "-Xn"], path)
-    clean_target = "[yellow]⚠ 有 target[/]" if ignored_files else "[green]✔ 沒 target[/]"
+    clean_target = "[yellow]Has ignored files[/]" if ignored_files else "[green]No ignored files[/]"
 
     return {
         "is_git": True,
@@ -93,8 +93,8 @@ def main():
                     continue
                 
                 # 如果資料夾名結尾為 .workspace，進入層級三
-                if second_level.name.endswith(".workspace"):
-                    group_name = second_level.name
+                if second_level.name.endswith(".ws"):
+                    group_name = first_level.name + '/' + second_level.name
                     for third_level in sorted(second_level.iterdir()):
                         if third_level.is_dir():
                             groups[group_name].append((third_level.name, third_level))
@@ -122,7 +122,7 @@ def main():
     with Status("[bold green]正在檢查 Git 狀態...", console=console):
         for group in sorted(groups.keys()):
             # 加入分組標頭列
-            table.add_row(f"[bold blue]📂 {group}[/]", "", "", "", "")
+            table.add_row(f"[bold blue]📂{group}[/]", "", "", "", "")
             
             for display_name, full_path in groups[group]:
                 info = get_git_info(full_path)
