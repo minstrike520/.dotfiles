@@ -11,3 +11,4 @@ abbr --add zipls unzip -l
 abbr --add zipsl unzip -l
 abbr --add n nvim
 abbr --add j just
+abbr --add nivm nvim

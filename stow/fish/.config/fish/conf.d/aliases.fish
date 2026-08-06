@@ -14,7 +14,6 @@ alias kshutdown="qdbus org.kde.Shutdown /Shutdown org.kde.Shutdown.logoutAndShut
 alias aur='pacseek -s'
 alias myps='LANG= ps auxf | cut -c 1-$COLUMNS'
 alias hjust='just --justfile ~/.dotfiles/Justfile'
-alias nivm='nvim'
 alias op='xdg-open'
 
 alias pdlogin='pd login archlinux --user bladeisoe --shared-tmp --termux-home'
