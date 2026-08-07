@@ -32,8 +32,8 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "autocmds"
-require "custom.clipboard"
-require "custom.transparent"
+require "optionsd.clipboard"
+require "optionsd.transparent"
 
 vim.schedule(function()
   require "mappings"
