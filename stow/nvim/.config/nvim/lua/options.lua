@@ -14,6 +14,13 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 })
 
 -- Clipboard Traversal
+local function paste()
+  return {
+    vim.fn.split(vim.fn.getreg(""), "\n"),
+    vim.fn.getregtype(""),
+  }
+end
+
 if vim.fn.has('wsl') == 1 then
   vim.g.clipboard = {
     name = 'WslClipboard',
@@ -35,8 +42,8 @@ elseif vim.env.SSH_CONNECTION then
         ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
       },
       paste = {
-        ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
-        ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+        ["+"] = paste,
+        ["*"] = paste,
       },
     }
   end
