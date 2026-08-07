@@ -61,6 +61,7 @@ dofile(vim.g.base46_cache .. "statusline")
 
 require "options"
 require "autocmds"
+require "custom.clipboard"
 
 vim.schedule(function()
   require "mappings"
