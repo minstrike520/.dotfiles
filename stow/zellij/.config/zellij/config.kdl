@@ -143,9 +143,6 @@ keybinds clear-defaults=true {
             }
             SwitchToMode "normal"
         }
-        bind "x" {
-            Quit;
-        }
     }
     shared_except "locked" {
         bind "Alt left" { MoveFocusOrTab "left"; }
@@ -233,6 +230,9 @@ keybinds clear-defaults=true {
     }
     renamepane {
         bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
+    }
+    shared_among "session" "tmux" {
+        bind "d" { Detach; }
     }
     tmux {
         bind "left" { MoveFocus "left"; SwitchToMode "normal"; }
