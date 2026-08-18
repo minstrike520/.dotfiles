@@ -1,3 +1,3 @@
-function greal
+function cdreal
     cd "$(pwd -P)"
 end
