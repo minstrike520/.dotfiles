@@ -12,6 +12,7 @@ abbr --add sl ls
 abbr --add zipls unzip -l
 abbr --add zipsl unzip -l
 abbr --add n nvim
+abbr --add nv nvim
 abbr --add j just
 abbr --add nivm nvim
 abbr --add sql3 sqlite3
