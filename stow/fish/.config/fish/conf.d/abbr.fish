@@ -4,6 +4,7 @@ abbr --add dp docker compose
 abbr --add t tailscale
 abbr --add ts tailscale status
 abbr --add d docker
+abbr --add c cargo
 # abbr --add o sudo systemctl restart sddm
 # abbr --add c sudo systemctl stop sddm
 # abbr --add x sudo systemctl poweroff
