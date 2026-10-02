@@ -1,16 +1,35 @@
-function ezacat
-  echo -e "\033[1;34m=== Directories ===\033[0m"
-  eza -lD --icons always
+function ezacat --description "eza grouped by media and file types"
+    set -l images (path filter -f *.png *.jpg *.jpeg *.gif *.webp)
+    set -l videos (path filter -f *.mp4 *.mkv *.avi *.mov)
+    set -l docs   (path filter -f *.pdf *.txt *.md *.docx)
 
-  echo -e "\n\033[1;35m=== Images ===\033[0m"
-  eza -lf --icons always *.png *.jpg *.jpeg *.gif *.webp 2>/dev/null
+    # 1. 目錄
+    set_color --bold blue; echo "=== Directories ==="; set_color normal
+    eza -lD --icons always
 
-  echo -e "\n\033[1;36m=== Videos ===\033[0m"
-  eza -lf --icons always *.mp4 *.mkv *.avi *.mov 2>/dev/null
+    # 2. 圖片類
+    if test (count $images) -gt 0
+        echo
+        set_color --bold magenta; echo "=== Images ==="; set_color normal
+        eza -lf --icons always $images
+    end
 
-  echo -e "\n\033[1;33m=== Documents ===\033[0m"
-  eza -lf --icons always *.pdf *.txt *.md *.docx 2>/dev/null
+    # 3. 影片類
+    if test (count $videos) -gt 0
+        echo
+        set_color --bold cyan; echo "=== Videos ==="; set_color normal
+        eza -lf --icons always $videos
+    end
 
-  echo -e "\n\033[1;37m=== Others ===\033[0m"
-  eza -lf --icons always -I "*.png|*.jpg|*.jpeg|*.gif|*.webp|*.mp4|*.mkv|*.avi|*.mov|*.pdf|*.txt|*.md|*.docx"
+    # 4. 文件類
+    if test (count $docs) -gt 0
+        echo
+        set_color --bold yellow; echo "=== Documents ==="; set_color normal
+        eza -lf --icons always $docs
+    end
+
+    # 5. 其餘檔案（排除上述已列出的副檔名）
+    echo
+    set_color --bold white; echo "=== Others ==="; set_color normal
+    eza -lf --icons always -I "*.png|*.jpg|*.jpeg|*.gif|*.webp|*.mp4|*.mkv|*.avi|*.mov|*.pdf|*.txt|*.md|*.docx"
 end
