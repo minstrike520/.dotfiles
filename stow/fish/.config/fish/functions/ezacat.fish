@@ -24,7 +24,7 @@ function ezacat --description "eza grouped by media and file types"
     # 4. 文件類
     if test (count $docs) -gt 0
         echo
-        set_color --bold yellow; echo "=== Documents ==="; set_color normal
+        set_color --bold green; echo "=== Documents ==="; set_color normal
         eza -lf --icons always $docs
     end
 
