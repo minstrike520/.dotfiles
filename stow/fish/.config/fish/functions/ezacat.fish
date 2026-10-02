@@ -53,56 +53,56 @@ function ezacat --description "eza grouped by media and file type; headers match
     if test (count $images) -gt 0
         echo
         set_color magenta; echo "=== Images ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $images
+        eza -lf --icons=auto --sort=ext --git $images
     end
 
     # 3. Videos — FileType::video = Purple.bold (bold magenta)
     if test (count $videos) -gt 0
         echo
         set_color --bold magenta; echo "=== Videos ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $videos
+        eza -lf --icons=auto --sort=ext --git $videos
     end
 
     # 4. Music — FileType::music = Cyan.normal (cyan)
     if test (count $music) -gt 0
         echo
         set_color cyan; echo "=== Music ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $music
+        eza -lf --icons=auto --sort=ext --git $music
     end
 
     # 5. Lossless — FileType::lossless = Cyan.bold (bold cyan)
     if test (count $lossless) -gt 0
         echo
         set_color --bold cyan; echo "=== Lossless ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $lossless
+        eza -lf --icons=auto --sort=ext --git $lossless
     end
 
     # 6. Crypto — FileType::crypto = Green.bold (bold green)
     if test (count $crypto) -gt 0
         echo
         set_color --bold green; echo "=== Crypto ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $crypto
+        eza -lf --icons=auto --sort=ext --git $crypto
     end
 
     # 7. Documents — FileType::document = Green.normal (green)
     if test (count $docs) -gt 0
         echo
         set_color green; echo "=== Documents ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $docs
+        eza -lf --icons=auto --sort=ext --git $docs
     end
 
     # 8. Compressed — FileType::compressed = Red.normal (red)
     if test (count $compressed) -gt 0
         echo
         set_color red; echo "=== Compressed ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $compressed
+        eza -lf --icons=auto --sort=ext --git $compressed
     end
 
     # 9. Temp — FileType::temp = Style::default().dimmed (dim)
     if test (count $temp) -gt 0
         echo
         set_color --dim; echo "=== Temp ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $temp
+        eza -lf --icons=auto --sort=ext --git $temp
     end
 
     # 10. Compiled — FileType::compiled = Yellow.normal (yellow).
@@ -111,26 +111,26 @@ function ezacat --description "eza grouped by media and file type; headers match
     if test (count $compiled) -gt 0
         echo
         set_color yellow; echo "=== Compiled ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $compiled
+        eza -lf --icons=auto --sort=ext --git $compiled
     end
 
     # 11. Build — FileType::build = Yellow.bold().underline (bold underlined yellow)
     if test (count $build) -gt 0
         echo
         set_color --bold --underline yellow; echo "=== Build ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $build
+        eza -lf --icons=auto --sort=ext --git $build
     end
 
     # 12. Source — FileType::source = Yellow.bold (bold yellow)
     if test (count $sources) -gt 0
         echo
         set_color --bold yellow; echo "=== Source ==="; set_color normal
-        eza -lf --icons=auto --sort=ext $sources
+        eza -lf --icons=auto --sort=ext --git $sources
     end
 
     # 13. Everything else — unclassified files (eza renders them with the
     #     default/normal filekinds color)
     echo
     set_color normal; echo "=== Others ==="; set_color normal
-    eza -lf --icons=auto --sort=ext -I $ignore_pattern
+    eza -lf --icons=auto --sort=ext --git -I $ignore_pattern
 end
