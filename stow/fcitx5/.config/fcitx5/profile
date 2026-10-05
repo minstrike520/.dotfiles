@@ -4,7 +4,7 @@ Name=Default
 # Layout
 Default Layout=us
 # Default Input Method
-DefaultIM=taigikeyboard
+DefaultIM=chewing
 
 [Groups/0/Items/0]
 # Name
@@ -26,19 +26,13 @@ Name=taigikeyboard
 
 [Groups/0/Items/3]
 # Name
-Name=anthy
+Name=unikey
 # Layout
 # Layout=
 
 [Groups/0/Items/4]
 # Name
-Name=hangul
-# Layout
-# Layout=
-
-[Groups/0/Items/5]
-# Name
-Name=pinyin
+Name=anthy
 # Layout
 # Layout=
 
