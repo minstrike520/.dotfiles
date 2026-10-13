@@ -31,3 +31,6 @@
 [credential "https://gitlab.taieol.tw"]
 	helper = 
 	helper = !/usr/bin/glab auth git-credential
+[credential "https://gitea.i.blade520.com"]
+	helper = 
+	helper = !tea login helper
